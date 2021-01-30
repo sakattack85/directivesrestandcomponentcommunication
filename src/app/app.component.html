@@ -1,5 +1,10 @@
 <app-child (sendp)="handlerfunction($event)" 
-(sendphtmlonmouseover)="getdataonmouseover($event)" (increasecounterevent)="increasecounter($event)"></app-child> 
+(sendphtmlonmouseover)="getdataonmouseover($event)" 
+(increasecounterevent)="increasecounter($event)" 
+(sendb)="getdatafromchildtosendtochild2($event)"></app-child> 
 {{getfromchildonclick}}
 {{this.childtext}}
 <p>{{this.counter_p}}</p>
+
+
+<app-secondchild  [textfromchild]="texttochild2"></app-secondchild>
