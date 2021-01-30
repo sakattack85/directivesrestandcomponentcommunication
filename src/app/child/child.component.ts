@@ -6,29 +6,15 @@ import { Component, Input, OnInit, Output } from '@angular/core';
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnInit {
-  @Output() increasecounterevent= new EventEmitter()
-  @Output() sendphtmlonmouseover=new EventEmitter();
- @Output() sendp=new EventEmitter<String>();
-counter=0;
-increasecounter(){
-  this.increasecounterevent.emit(++this.counter)
-}
- getpinnerhtml(element){
-this.sendphtmlonmouseover.emit(element.innerHTML)
- }
-
-sendtoparent="hello appcomponent"
-  constructor() { }
-
-  senddatap(){
-    this.sendp.emit(this.sendtoparent);
+export class ChildComponent  {
+  @Output() counterchanged=new EventEmitter()
+  counter=0;
+  interval;
+  startgame(){
+this.interval = setInterval(() => this.counterchanged.emit(++this.counter),1000)
   }
-
-  ngOnInit(): void {
-  
-  }
-
-  
+   stopgame(){
+clearInterval(this.interval)
+   }
 
 }

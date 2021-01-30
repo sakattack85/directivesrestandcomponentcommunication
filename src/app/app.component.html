@@ -1,10 +1,9 @@
-<app-child (sendp)="handlerfunction($event)" 
-(sendphtmlonmouseover)="getdataonmouseover($event)" 
-(increasecounterevent)="increasecounter($event)" 
-(sendb)="getdatafromchildtosendtochild2($event)"></app-child> 
-{{getfromchildonclick}}
-{{this.childtext}}
-<p>{{this.counter_p}}</p>
+<app-child (counterchanged)="getcounter($event)"></app-child>
+<div  *ngFor="let counter of counterarray">
+    <p>{{counter}}</p>
+
+</div>
 
 
-<app-secondchild  [textfromchild]="texttochild2"></app-secondchild>
+
+
