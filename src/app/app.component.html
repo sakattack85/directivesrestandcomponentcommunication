@@ -8,4 +8,6 @@
 
 </div>
 <p appCustom [color]="dynamiccolorvalue">Directive apply</p>
-<app-child  [getfromparent]="passtochild" [getit]="strarray">{{dynamiccolorvalue}}</app-child>
+<app-child  [getfromparent]="passtochild" [getit]="strarray" 
+[counter]="counter_p" 
+  [getfromgrd_c]="'Hello grandchild'">{{counter_p}}  </app-child>
