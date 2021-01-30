@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'directivesrestandcomponentcommunication';
+  dynamiccolorvalue='blue'
+showhidep:boolean=false;
+log:number[]=[]
+clickcount=0;
+  togglep(){
+    this.dynamiccolorvalue="grey"
+this.showhidep=!this.showhidep;
+this.log.push(++this.clickcount);
+  }
 }

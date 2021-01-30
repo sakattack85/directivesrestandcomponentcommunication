@@ -1,1 +1,10 @@
-<p>Hi all</p>
+<button (click)="togglep()">Click</button>
+<p *ngIf="showhidep">Secret pass tuna</p>
+<div *ngFor="let logitem of log; let i=index">
+<p *ngIf="i<4; else elseblock">{{logitem}}</p>
+<ng-template #elseblock>
+<p [ngClass]="'blueback'">{{logitem}}</p>>
+</ng-template>
+
+</div>
+<p appCustom [color]="dynamiccolorvalue">Directive apply</p>
