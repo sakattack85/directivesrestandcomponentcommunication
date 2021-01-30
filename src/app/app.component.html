@@ -1,13 +1,5 @@
-<button (click)="togglep()">Click</button>
-<p *ngIf="showhidep">Secret pass tuna</p>
-<div *ngFor="let logitem of log; let i=index">
-<p *ngIf="i<4; else elseblock">{{logitem}}</p>
-<ng-template #elseblock>
-<p [ngClass]="'blueback'">{{logitem}}</p>>
-</ng-template>
-
-</div>
-<p appCustom [color]="dynamiccolorvalue">Directive apply</p>
-<app-child  [getfromparent]="passtochild" [getit]="strarray" 
-[counter]="counter_p" 
-  [getfromgrd_c]="'Hello grandchild'">{{counter_p}}  </app-child>
+<app-child (sendp)="handlerfunction($event)" 
+(sendphtmlonmouseover)="getdataonmouseover($event)" (increasecounterevent)="increasecounter($event)"></app-child> 
+{{getfromchildonclick}}
+{{this.childtext}}
+<p>{{this.counter_p}}</p>

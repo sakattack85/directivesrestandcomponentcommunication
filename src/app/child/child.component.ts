@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -6,16 +7,28 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
-@Input() getfromparent; 
-@Input() getit:string[]=[];
+  @Output() increasecounterevent= new EventEmitter()
+  @Output() sendphtmlonmouseover=new EventEmitter();
+ @Output() sendp=new EventEmitter<String>();
+counter=0;
+increasecounter(){
+  this.increasecounterevent.emit(++this.counter)
+}
+ getpinnerhtml(element){
+this.sendphtmlonmouseover.emit(element.innerHTML)
+ }
+
+sendtoparent="hello appcomponent"
   constructor() { }
+
+  senddatap(){
+    this.sendp.emit(this.sendtoparent);
+  }
 
   ngOnInit(): void {
   
   }
 
-  dosth(){
-    alert(this.getfromparent)
-  }
+  
 
 }
