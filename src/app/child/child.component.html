@@ -1,0 +1,7 @@
+<p>child works!</p>
+<p>{{getfromparent}}</p>
+<button><ng-content></ng-content></button>
+<div *ngFor="let get of getit">
+    <p (click)="dosth()">{{get}}</p>
+</div>
+
